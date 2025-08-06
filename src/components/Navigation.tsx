@@ -1,16 +1,11 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const scrollToSection = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({
-      behavior: "smooth",
-    });
-    setIsOpen(false);
-  };
+  const location = useLocation();
 
   return (
     <nav className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border">
@@ -20,24 +15,36 @@ const Navigation = () => {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            <button
-              onClick={() => scrollToSection("home")}
-              className="text-foreground hover:text-primary transition-colors"
+            <Link
+              to="/"
+              className={`transition-colors ${
+                location.pathname === "/" 
+                  ? "text-primary font-semibold" 
+                  : "text-foreground hover:text-primary"
+              }`}
             >
               Home
-            </button>
-            <button
-              onClick={() => scrollToSection("about")}
-              className="text-foreground hover:text-primary transition-colors"
+            </Link>
+            <Link
+              to="/about"
+              className={`transition-colors ${
+                location.pathname === "/about" 
+                  ? "text-primary font-semibold" 
+                  : "text-foreground hover:text-primary"
+              }`}
             >
               About Me
-            </button>
-            <button
-              onClick={() => scrollToSection("projects")}
-              className="text-foreground hover:text-primary transition-colors"
+            </Link>
+            <Link
+              to="/projects"
+              className={`transition-colors ${
+                location.pathname === "/projects" 
+                  ? "text-primary font-semibold" 
+                  : "text-foreground hover:text-primary"
+              }`}
             >
               My Projects
-            </button>
+            </Link>
           </div>
 
           {/* Mobile Navigation Button */}
@@ -55,24 +62,39 @@ const Navigation = () => {
         {isOpen && (
           <div className="md:hidden mt-4 pb-4 border-t border-border pt-4">
             <div className="flex flex-col space-y-4">
-              <button
-                onClick={() => scrollToSection("home")}
-                className="text-left text-foreground hover:text-primary transition-colors"
+              <Link
+                to="/"
+                onClick={() => setIsOpen(false)}
+                className={`text-left transition-colors ${
+                  location.pathname === "/" 
+                    ? "text-primary font-semibold" 
+                    : "text-foreground hover:text-primary"
+                }`}
               >
                 Home
-              </button>
-              <button
-                onClick={() => scrollToSection("about")}
-                className="text-left text-foreground hover:text-primary transition-colors"
+              </Link>
+              <Link
+                to="/about"
+                onClick={() => setIsOpen(false)}
+                className={`text-left transition-colors ${
+                  location.pathname === "/about" 
+                    ? "text-primary font-semibold" 
+                    : "text-foreground hover:text-primary"
+                }`}
               >
                 About Me
-              </button>
-              <button
-                onClick={() => scrollToSection("projects")}
-                className="text-left text-foreground hover:text-primary transition-colors"
+              </Link>
+              <Link
+                to="/projects"
+                onClick={() => setIsOpen(false)}
+                className={`text-left transition-colors ${
+                  location.pathname === "/projects" 
+                    ? "text-primary font-semibold" 
+                    : "text-foreground hover:text-primary"
+                }`}
               >
                 My Projects
-              </button>
+              </Link>
             </div>
           </div>
         )}

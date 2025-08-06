@@ -1,12 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
-  const scrollToAbout = () => {
-    document.getElementById("about")?.scrollIntoView({
-      behavior: "smooth",
-    });
-  };
 
   return (
     <section
@@ -30,8 +26,8 @@ const HeroSection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <Button size="lg" onClick={scrollToAbout} className="bg-primary hover:bg-primary/90">
-              View My Work
+            <Button size="lg" asChild className="bg-primary hover:bg-primary/90">
+              <Link to="/projects">View My Work</Link>
             </Button>
             <Button variant="outline" size="lg" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
               Contact Me

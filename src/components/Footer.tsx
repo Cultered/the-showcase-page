@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -30,28 +31,28 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <button 
-                  onClick={() => document.getElementById("home")?.scrollIntoView({ behavior: "smooth" })}
+                <Link 
+                  to="/"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Home
-                </button>
+                </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
+                <Link 
+                  to="/about"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   About Me
-                </button>
+                </Link>
               </li>
               <li>
-                <button 
-                  onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
+                <Link 
+                  to="/projects"
                   className="text-muted-foreground hover:text-primary transition-colors"
                 >
                   Projects
-                </button>
+                </Link>
               </li>
             </ul>
           </div>
