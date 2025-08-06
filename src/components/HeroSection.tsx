@@ -1,22 +1,31 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
 import { Link } from "react-router-dom";
+import FractalBackground from "./FractalBackground";
 
 const HeroSection = () => {
 
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center hero-gradient relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
     >
-      {/* Background decorative elements */}
-      <div className="absolute inset-0 opacity-10">
+      {/* Fractal background */}
+      <div className="absolute inset-0 z-0">
+        <FractalBackground />
+      </div>
+      
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-background/20 z-10"></div>
+
+      {/* Background decorative elements - reduced opacity since we have fractal background */}
+      <div className="absolute inset-0 opacity-5 z-20">
         <div className="absolute top-20 left-20 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-xl"></div>
         <div className="absolute top-40 right-20 w-72 h-72 bg-accent rounded-full mix-blend-multiply filter blur-xl"></div>
         <div className="absolute bottom-20 left-1/2 w-72 h-72 bg-primary rounded-full mix-blend-multiply filter blur-xl"></div>
       </div>
 
-      <div className="container mx-auto px-4 text-center relative z-10">
+      <div className="container mx-auto px-4 text-center relative z-30">
         <div className="fade-in">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-glow">
             Hi, I'm <span className="text-accent">Your Name</span>
@@ -49,8 +58,8 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ArrowDown className="text-muted-foreground" size={24} />
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-30">
+        <ArrowDown className="text-white/80" size={24} />
       </div>
     </section>
   );
