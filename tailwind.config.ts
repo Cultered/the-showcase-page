@@ -61,7 +61,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				'hero-gradient': {
+					start: 'hsl(var(--hero-gradient-start))',
+					end: 'hsl(var(--hero-gradient-end))'
+				},
+				'section-bg': 'hsl(var(--section-background))',
+				'text-glow': 'hsl(var(--text-glow))',
+				'card-hover': 'hsl(var(--card-hover))'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
