@@ -45,14 +45,14 @@ const FractalBackground = () => {
                        hash(i + vec2(1.0, 1.0)), u.x), u.y);
       }
 
-      // Fractal Brownian Motion
-      float fbm(vec2 p) {
+      // Fractal Brownian Motion with offset
+      float fbm(vec2 p, vec2 offset) {
         float value = 0.0;
         float amplitude = 0.5;
         float frequency = 1.0;
         
         for(int i = 0; i < 6; i++) {
-          value += amplitude * noise(frequency * p);
+          value += amplitude * noise(frequency * (p + offset));
           amplitude *= 0.5;
           frequency *= 2.0;
         }
@@ -67,21 +67,20 @@ const FractalBackground = () => {
         // Animate the fractal
         vec2 p = uv * 3.0 + u_time * 0.1;
         
-        // Create multiple layers of FBM
-        float f1 = fbm(p);
-        float f2 = fbm(p + vec2(1.7, 9.2) + u_time * 0.15);
-        float f3 = fbm(p + vec2(8.3, 2.8) + u_time * 0.05);
+        // Single layer of FBM with offset
+        vec2 offset = vec2(sin(u_time * 0.1) * 2.0, cos(u_time * 0.15) * 1.5);
+        float fbmValue = fbm(p, offset);
         
-        // Combine layers with different colors
-        vec3 color1 = vec3(0.2, 0.1, 0.4); // Deep purple
-        vec3 color2 = vec3(0.1, 0.3, 0.8); // Blue
-        vec3 color3 = vec3(0.8, 0.2, 0.5); // Pink
-        vec3 color4 = vec3(0.1, 0.1, 0.2); // Dark base
+        // Bright colors
+        vec3 color1 = vec3(0.9, 0.6, 1.0);  // Bright purple
+        vec3 color2 = vec3(0.5, 0.8, 1.0);  // Bright cyan
+        vec3 color3 = vec3(1.0, 0.7, 0.9);  // Bright pink
+        vec3 color4 = vec3(0.3, 0.5, 0.8);  // Bright blue base
         
-        // Mix colors based on FBM values
-        vec3 finalColor = mix(color4, color1, f1);
-        finalColor = mix(finalColor, color2, f2 * 0.7);
-        finalColor = mix(finalColor, color3, f3 * 0.5);
+        // Create final color using single FBM value
+        vec3 finalColor = mix(color4, color1, fbmValue);
+        finalColor = mix(finalColor, color2, fbmValue * 0.8);
+        finalColor = mix(finalColor, color3, fbmValue * 0.6);
         
         // Add some brightness variation
         finalColor += 0.1 * sin(u_time + uv.x * 10.0) * cos(u_time + uv.y * 10.0);
