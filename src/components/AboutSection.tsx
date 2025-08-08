@@ -21,8 +21,8 @@ const AboutSection = () => {
     },
     {
       icon: <Palette size={40} />,
-      title: "UI/UX Design",
-      description: "Designing beautiful and user-friendly interfaces"
+      title: "Shaders Design",
+      description: "Designing beautiful 2D and 3D graphics using WebGL and GLSL"
     },
     {
       icon: <Smartphone size={40} />,
@@ -74,19 +74,19 @@ const AboutSection = () => {
               <h3 className="text-2xl font-bold mb-6 text-center">Quick Stats</h3>
               <div className="grid grid-cols-2 gap-6 text-center">
                 <div>
-                  <div className="text-3xl font-bold text-primary mb-2">50+</div>
+                  <div className="text-3xl font-bold text-primary mb-2">10+</div>
                   <div className="text-muted-foreground">Projects Completed</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-accent mb-2">3+</div>
+                  <div className="text-3xl font-bold text-accent mb-2">2+</div>
                   <div className="text-muted-foreground">Years Experience</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-primary mb-2">25+</div>
+                  <div className="text-3xl font-bold text-primary mb-2">0</div>
                   <div className="text-muted-foreground">Happy Clients</div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-accent mb-2">100%</div>
+                  <div className="text-3xl font-bold text-accent mb-2">-100%</div>
                   <div className="text-muted-foreground">Satisfaction Rate</div>
                 </div>
               </div>

@@ -15,13 +15,13 @@ const Footer = () => {
               Feel free to reach out!
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://github.com/Cultered" className="text-muted-foreground hover:text-primary transition-colors">
                 <Github size={24} />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://www.linkedin.com/in/alexander-belov-55a896247/" className="text-muted-foreground hover:text-primary transition-colors">
                 <Linkedin size={24} />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="mailto:mail.alexbelov@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
                 <Mail size={24} />
               </a>
             </div>
@@ -60,16 +60,16 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Contact Info</h3>
             <div className="space-y-2 text-muted-foreground">
-              <p>📧 your.email@example.com</p>
-              <p>📱 +1 (555) 123-4567</p>
-              <p>📍 Your City, Country</p>
+              <p>📧 mail.alexbelov@gmail.com</p>
+              <p>📱 +37064156193</p>
+              <p>📍 Vilnuis, Lithuania</p>
             </div>
           </div>
         </div>
 
         <div className="border-t border-border pt-8 text-center">
           <p className="text-muted-foreground flex items-center justify-center gap-2">
-            © {currentYear} Your Name. Made with <Heart size={16} className="text-red-500" /> using React & Tailwind CSS
+            © {currentYear} Alexander Belov. Made with <Heart size={16} className="text-red-500" /> using React & Tailwind CSS
           </p>
         </div>
       </div>

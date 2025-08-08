@@ -28,10 +28,10 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 text-center relative z-30">
         <div className="fade-in">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 text-glow">
-            Hi, I'm <span className="text-accent">Your Name</span>
+            Hi, I'm <span className="text-accent">Alexander Belov</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-muted-foreground max-w-3xl mx-auto">
-            Full Stack Developer passionate about creating beautiful, functional web experiences
+            Front-End Developer passionate about creating beautiful, functional web experiences
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
@@ -44,15 +44,15 @@ const HeroSection = () => {
           </div>
 
           <div className="flex justify-center space-x-6">
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              <Github size={24} />
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              <Linkedin size={24} />
-            </a>
-            <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              <Mail size={24} />
-            </a>
+              <a href="https://github.com/Cultered" className="text-muted-foreground hover:text-primary transition-colors">
+                <Github size={24} />
+              </a>
+              <a href="https://www.linkedin.com/in/alexander-belov-55a896247/" className="text-muted-foreground hover:text-primary transition-colors">
+                <Linkedin size={24} />
+              </a>
+              <a href="mailto:mail.alexbelov@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+                <Mail size={24} />
+              </a>
           </div>
         </div>
       </div>

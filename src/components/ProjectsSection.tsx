@@ -5,54 +5,6 @@ import { ExternalLink, Github } from "lucide-react";
 
 const ProjectsSection = () => {
   const projects = [
-    {
-      title: "E-Commerce Platform",
-      description: "A full-featured e-commerce platform with user authentication, payment processing, and admin dashboard.",
-      image: "/placeholder.svg",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-      liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      title: "Task Management App",
-      description: "A collaborative task management application with real-time updates and team collaboration features.",
-      image: "/placeholder.svg",
-      technologies: ["React", "TypeScript", "Firebase", "Tailwind"],
-      liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      title: "Weather Dashboard",
-      description: "A responsive weather dashboard with location-based forecasts and interactive maps.",
-      image: "/placeholder.svg",
-      technologies: ["JavaScript", "CSS3", "Weather API", "Charts.js"],
-      liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      title: "Portfolio Website",
-      description: "A modern portfolio website showcasing responsive design and smooth animations.",
-      image: "/placeholder.svg",
-      technologies: ["React", "Tailwind CSS", "Framer Motion", "Vercel"],
-      liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      title: "Social Media Dashboard",
-      description: "Analytics dashboard for social media metrics with data visualization and reporting features.",
-      image: "/placeholder.svg",
-      technologies: ["React", "D3.js", "Express", "PostgreSQL"],
-      liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      title: "Blog Platform",
-      description: "A full-stack blog platform with content management system and SEO optimization.",
-      image: "/placeholder.svg",
-      technologies: ["Next.js", "Prisma", "MySQL", "NextAuth"],
-      liveUrl: "#",
-      githubUrl: "#"
-    }
   ];
 
   return (
