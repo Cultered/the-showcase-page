@@ -1,4 +1,5 @@
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Mail, Heart, Linkedin } from "lucide-react";
+import { SiGithub } from "@icons-pack/react-simple-icons";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -16,7 +17,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a href="https://github.com/Cultered" className="text-muted-foreground hover:text-primary transition-colors">
-                <Github size={24} />
+                <SiGithub size={24} />
               </a>
               <a href="https://www.linkedin.com/in/alexander-belov-55a896247/" className="text-muted-foreground hover:text-primary transition-colors">
                 <Linkedin size={24} />

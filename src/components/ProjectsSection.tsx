@@ -1,7 +1,8 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import { SiGithub } from "@icons-pack/react-simple-icons";
 import { projects } from "@/data/projects";
 
 const ProjectsSection = () => {
@@ -67,7 +68,7 @@ const ProjectsSection = () => {
                     asChild
                   >
                     <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                      <Github size={16} className="mr-2" />
+                      <SiGithub size={16} className="mr-2" />
                       Code
                     </a>
                   </Button>

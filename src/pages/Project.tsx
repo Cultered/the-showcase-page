@@ -2,7 +2,8 @@ import { useParams } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ExternalLink, Github } from "lucide-react";
+import { ArrowLeft, ExternalLink } from "lucide-react";
+import { SiGithub } from "@icons-pack/react-simple-icons";
 import { projects } from "@/data/projects";
 
 const Project = () => {
@@ -55,7 +56,7 @@ const Project = () => {
               </Button>
               <Button variant="outline" asChild>
                 <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                  <Github className="mr-2 h-4 w-4" />
+                  <SiGithub size={16} className="mr-2" />
                   View Code
                 </a>
               </Button>
