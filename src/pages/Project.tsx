@@ -3,6 +3,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ExternalLink, Github } from "lucide-react";
+import TriangleIcon from "../../public/assets/triangles.png"
 
 const Project = () => {
   const { id } = useParams();
@@ -11,13 +12,13 @@ const Project = () => {
   const projects = [
     {
       id: 1,
-      title: "Interactive Web Dashboard",
-      description: "A modern dashboard built with React and TypeScript featuring real-time data visualization and user management. This project showcases advanced state management, responsive design principles, and integration with multiple APIs.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Chart.js"],
-      liveUrl: "https://example.com/dashboard",
-      githubUrl: "https://github.com/example/dashboard",
-      iframeUrl: "https://example.com/dashboard"
+      title: "WebGPU Interactive Triangles Background",
+      description: "WebGPu and WGSL powered interactive background with moving triangles.",
+      image: TriangleIcon,
+      technologies: ["WebGPU", "WGSL", "JavaScript"],
+      liveUrl: "https://cultered.github.io/WebGPU-Scenes/Triangles.html",
+      githubUrl: "https://github.com/Cultered/WebGPU-Scenes/blob/main/Triangles.html",
+      iframeUrl: "https://cultered.github.io/WebGPU-Scenes/Triangles.html"
     }
   ];
 

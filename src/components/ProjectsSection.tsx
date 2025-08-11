@@ -2,18 +2,19 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
+import TriangleIcon from "../../public/assets/triangles.png"
 
 const ProjectsSection = () => {
   const projects = [
     {
       id: 1,
-      title: "Interactive Web Dashboard",
-      description: "A modern dashboard built with React and TypeScript featuring real-time data visualization and user management.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "Chart.js"],
-      liveUrl: "https://example.com/dashboard",
+      title: "WebGPU Interactive Triangles Background",
+      description: "WebGPu and WGSL powered interactive background with moving triangles.",
+      image: TriangleIcon,
+      technologies: ["WebGPU", "WGSL", "JavaScript"],
+      liveUrl: "https://cultered.github.io/WebGPU-Scenes/Triangles.html",
       githubUrl: "https://github.com/example/dashboard",
-      iframeUrl: "https://example.com/dashboard"
+      iframeUrl: "https://cultered.github.io/WebGPU-Scenes/Triangles.html"
     }
   ];
 
