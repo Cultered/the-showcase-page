@@ -56,10 +56,10 @@ const ProjectsSection = () => {
                     className="flex-1 bg-primary hover:bg-primary/90"
                     asChild
                   >
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                    {project.liveUrl &&<a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                       <ExternalLink size={16} className="mr-2" />
                       Live Demo
-                    </a>
+                    </a>}
                   </Button>
                   <Button
                     variant="outline"
@@ -67,10 +67,10 @@ const ProjectsSection = () => {
                     className="flex-1 border-border hover:bg-secondary"
                     asChild
                   >
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                    {project.githubUrl &&<a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                       <SiGithub size={16} className="mr-2" />
                       Code
-                    </a>
+                    </a>}
                   </Button>
                 </div>
               </CardFooter>

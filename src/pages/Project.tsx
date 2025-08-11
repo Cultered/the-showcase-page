@@ -49,21 +49,21 @@ const Project = () => {
             
             <div className="flex gap-4 mb-8">
               <Button asChild>
-                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                {project.liveUrl &&<a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                   <ExternalLink className="mr-2 h-4 w-4" />
                   Live Demo
-                </a>
+                </a>}
               </Button>
               <Button variant="outline" asChild>
-                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                {project.githubUrl &&<a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                   <SiGithub size={16} className="mr-2" />
                   View Code
-                </a>
+                </a>}
               </Button>
             </div>
           </div>
 
-          <div className="w-full">
+          {project.iframeUrl &&<div className="w-full">
             <div className="bg-card border border-border rounded-lg overflow-hidden shadow-lg">
               <div className="bg-muted px-4 py-2 border-b border-border">
                 <div className="flex items-center gap-2">
@@ -80,7 +80,7 @@ const Project = () => {
                 sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
               />
             </div>
-          </div>
+          </div>}
         </div>
       </div>
       <Footer />
