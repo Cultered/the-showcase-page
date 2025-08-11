@@ -5,6 +5,16 @@ import { ExternalLink, Github } from "lucide-react";
 
 const ProjectsSection = () => {
   const projects = [
+    {
+      id: 1,
+      title: "Interactive Web Dashboard",
+      description: "A modern dashboard built with React and TypeScript featuring real-time data visualization and user management.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
+      technologies: ["React", "TypeScript", "Tailwind CSS", "Chart.js"],
+      liveUrl: "https://example.com/dashboard",
+      githubUrl: "https://github.com/example/dashboard",
+      iframeUrl: "https://example.com/dashboard"
+    }
   ];
 
   return (
@@ -31,8 +41,10 @@ const ProjectsSection = () => {
               </div>
               
               <CardContent className="p-6">
-                <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
-                  {project.title}
+                <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors cursor-pointer">
+                  <a href={`/project/${project.id}`}>
+                    {project.title}
+                  </a>
                 </h3>
                 <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
                   {project.description}
