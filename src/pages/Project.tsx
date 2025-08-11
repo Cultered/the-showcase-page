@@ -3,24 +3,10 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, ExternalLink, Github } from "lucide-react";
-import TriangleIcon from "../../public/assets/triangles.png"
+import { projects } from "@/data/projects";
 
 const Project = () => {
   const { id } = useParams();
-
-  // Mock project data - in real app this would come from API/database
-  const projects = [
-    {
-      id: 1,
-      title: "WebGPU Interactive Triangles Background",
-      description: "WebGPu and WGSL powered interactive background with moving triangles.",
-      image: TriangleIcon,
-      technologies: ["WebGPU", "WGSL", "JavaScript"],
-      liveUrl: "https://cultered.github.io/WebGPU-Scenes/Triangles.html",
-      githubUrl: "https://github.com/Cultered/WebGPU-Scenes/blob/main/Triangles.html",
-      iframeUrl: "https://cultered.github.io/WebGPU-Scenes/Triangles.html"
-    }
-  ];
 
   const project = projects.find(p => p.id === parseInt(id || "0"));
 

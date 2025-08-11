@@ -2,21 +2,9 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
-import TriangleIcon from "../../public/assets/triangles.png"
+import { projects } from "@/data/projects";
 
 const ProjectsSection = () => {
-  const projects = [
-    {
-      id: 1,
-      title: "WebGPU Interactive Triangles Background",
-      description: "WebGPu and WGSL powered interactive background with moving triangles.",
-      image: TriangleIcon,
-      technologies: ["WebGPU", "WGSL", "JavaScript"],
-      liveUrl: "https://cultered.github.io/WebGPU-Scenes/Triangles.html",
-      githubUrl: "https://github.com/example/dashboard",
-      iframeUrl: "https://cultered.github.io/WebGPU-Scenes/Triangles.html"
-    }
-  ];
 
   return (
     <section id="projects" className="py-20 bg-background">
