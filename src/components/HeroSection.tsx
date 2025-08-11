@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Mail, ArrowDown, Linkedin } from "lucide-react";
+import { Mail, Circle, Linkedin } from "lucide-react";
 import { SiGithub } from "@icons-pack/react-simple-icons";
 import { Link } from "react-router-dom";
 import FractalBackground from "./FractalBackground";
@@ -40,7 +40,7 @@ const HeroSection = () => {
               <Link to="/projects">View My Work</Link>
             </Button>
             <Button variant="outline" size="lg" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground">
-              Contact Me
+              <Link to="/about">About Me</Link>
             </Button>
           </div>
 
@@ -58,10 +58,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-30">
-        <ArrowDown className="text-white/80" size={24} />
-      </div>
+      
     </section>
   );
 };
