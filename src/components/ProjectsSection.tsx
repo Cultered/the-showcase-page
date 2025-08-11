@@ -28,7 +28,7 @@ const ProjectsSection = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
-              
+
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors cursor-pointer">
                   <a href={`/project/${project.id}`}>
@@ -38,7 +38,7 @@ const ProjectsSection = () => {
                 <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
                   {project.description}
                 </p>
-                
+
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech) => (
                     <Badge key={tech} variant="secondary" className="text-xs bg-secondary/80">
@@ -50,8 +50,8 @@ const ProjectsSection = () => {
 
               <CardFooter className="p-6 pt-0">
                 <div className="flex gap-3 w-full">
-                  <Button 
-                    size="sm" 
+                  <Button
+                    size="sm"
                     className="flex-1 bg-primary hover:bg-primary/90"
                     asChild
                   >
@@ -60,9 +60,9 @@ const ProjectsSection = () => {
                       Live Demo
                     </a>
                   </Button>
-                  <Button 
-                    variant="outline" 
-                    size="sm" 
+                  <Button
+                    variant="outline"
+                    size="sm"
                     className="flex-1 border-border hover:bg-secondary"
                     asChild
                   >
@@ -78,12 +78,14 @@ const ProjectsSection = () => {
         </div>
 
         <div className="text-center mt-12 fade-in">
-          <Button 
-            variant="outline" 
+          <Button
+            variant="outline"
             size="lg"
             className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
           >
-            View All Projects
+            <a href="https://github.com/Cultered?tab=repositories" target="_blank" rel="noopener noreferrer">
+              View All Projects
+            </a>
           </Button>
         </div>
       </div>

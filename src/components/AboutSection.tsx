@@ -4,8 +4,8 @@ import { Code, Palette, Server, Smartphone } from "lucide-react";
 
 const AboutSection = () => {
   const skills = [
-    "React", "TypeScript", "Node.js", "Python", "JavaScript", "CSS/SCSS", 
-    "Tailwind CSS", "Express.js", "MongoDB", "PostgreSQL", "Git", "AWS"
+    "React", "TypeScript", "Python", "JavaScript", "CSS/SCSS/Sass",
+    "FastAPI", "PostgreSQL", "Git", "OpenGL", "WebGPU", "Unity"
   ];
 
   const services = [

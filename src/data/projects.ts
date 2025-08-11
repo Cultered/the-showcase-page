@@ -1,4 +1,4 @@
-import TriangleIcon from "../../public/assets/triangles.png";
+import TriangleIcon from "../assets/triangles.png";
 
 export interface Project {
   id: number;

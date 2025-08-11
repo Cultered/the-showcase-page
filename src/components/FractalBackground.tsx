@@ -29,6 +29,7 @@ const FractalBackground = () => {
       uniform float u_time;
       uniform vec2 u_resolution;
       uniform vec2 u_mouse;
+      uniform float u_mouseSpeed;
 
       // Improved hash function for less grid artifacts
       float hash(vec2 p) {
@@ -85,7 +86,6 @@ const FractalBackground = () => {
 
         // Add mouse-based distortion to the offset
         vec2 offset = vec2(sin(u_time * 0.1) * 2.0, cos(u_time * 0.15) * 1.5);
-        // Stronger and wider mouse effect
         float mouseEffect = exp(-dist * 3.0) ;
         offset += (uv - mouse) * mouseEffect;
 
@@ -107,6 +107,11 @@ const FractalBackground = () => {
 
         // Add subtle gradient
         finalColor *= 0.85 + 0.15 * uv.y;
+
+        // Add glow around the moving (mouse) part
+        float glow = exp(-dist * 10.0) * (0.3 + 1.2 * clamp(u_mouseSpeed / 20.0, 0.0, 1.0));
+        vec3 glowColor = vec3(0.9, 0.7, 1.0); // Soft light purple glow
+        finalColor += glow * glowColor;
 
         gl_FragColor = vec4(finalColor, 1.0);
       }
@@ -153,6 +158,7 @@ const FractalBackground = () => {
     const timeLocation = gl.getUniformLocation(program, 'u_time');
     const resolutionLocation = gl.getUniformLocation(program, 'u_resolution');
     const mouseLocation = gl.getUniformLocation(program, 'u_mouse');
+    const mouseSpeedLocation = gl.getUniformLocation(program, 'u_mouseSpeed');
 
     // Create buffer for full-screen quad
     const positionBuffer = gl.createBuffer();
@@ -181,6 +187,8 @@ const FractalBackground = () => {
     // Mouse trail state
     let lastMouse = [0, 0];
     let mouseTrail = [0, 0];
+    let lastTrail = [0, 0];
+    let mouseSpeed = 0;
 
     // Mouse event handler
     const handleMouseMove = (e: MouseEvent) => {
@@ -200,6 +208,20 @@ const FractalBackground = () => {
       // Smoothly interpolate mouseTrail towards lastMouse for a lasting/trailing effect
       mouseTrail[0] += (lastMouse[0] - mouseTrail[0]) * 0.08;
       mouseTrail[1] += (lastMouse[1] - mouseTrail[1]) * 0.08;
+
+      // Calculate mouse speed (distance between frames)
+      const dx = mouseTrail[0] - lastTrail[0];
+      const dy = mouseTrail[1] - lastTrail[1];
+      mouseSpeed = Math.sqrt(dx * dx + dy * dy);
+
+      // Restrict mouseSpeed to a maximum value (e.g., 40)
+      const maxMouseSpeed = 5;
+      const clampedMouseSpeed = Math.min(mouseSpeed, maxMouseSpeed);
+
+      // Store for next frame
+      lastTrail[0] = mouseTrail[0];
+      lastTrail[1] = mouseTrail[1];
+
       mouseRef.current = [mouseTrail[0], mouseTrail[1]];
 
       gl.clearColor(0, 0, 0, 1);
@@ -210,8 +232,8 @@ const FractalBackground = () => {
       // Set uniforms
       gl.uniform1f(timeLocation, time * 0.001);
       gl.uniform2f(resolutionLocation, canvas.width, canvas.height);
-      // Set mouse uniform
       gl.uniform2f(mouseLocation, mouseRef.current[0], mouseRef.current[1]);
+      gl.uniform1f(mouseSpeedLocation, clampedMouseSpeed);
 
       // Set up attributes
       gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
