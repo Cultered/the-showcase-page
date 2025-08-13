@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { ExternalLink } from "lucide-react";
 import { SiGithub } from "@icons-pack/react-simple-icons";
 import { projects } from "@/data/projects";
+import { Link } from "react-router-dom";
 
 const ProjectsSection = () => {
 
@@ -32,9 +33,9 @@ const ProjectsSection = () => {
 
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors cursor-pointer">
-                  <a href={`/project/${project.id}`}>
+                  <Link to={`/project/${project.id}`}>
                     {project.title}
-                  </a>
+                  </Link>
                 </h3>
                 <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
                   {project.description}
@@ -56,10 +57,12 @@ const ProjectsSection = () => {
                     className="flex-1 bg-primary hover:bg-primary/90"
                     asChild
                   >
-                    {project.liveUrl &&<a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink size={16} className="mr-2" />
-                      Live Demo
-                    </a>}
+                    {project.liveUrl && (
+                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink size={16} className="mr-2" />
+                        Live Demo
+                      </a>
+                    )}
                   </Button>
                   <Button
                     variant="outline"
@@ -67,10 +70,12 @@ const ProjectsSection = () => {
                     className="flex-1 border-border hover:bg-secondary"
                     asChild
                   >
-                    {project.githubUrl &&<a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                      <SiGithub size={16} className="mr-2" />
-                      Code
-                    </a>}
+                    {project.githubUrl && (
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                        <SiGithub size={16} className="mr-2" />
+                        Code
+                      </a>
+                    )}
                   </Button>
                 </div>
               </CardFooter>
@@ -83,6 +88,7 @@ const ProjectsSection = () => {
             variant="outline"
             size="lg"
             className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+            asChild
           >
             <a href="https://github.com/Cultered?tab=repositories" target="_blank" rel="noopener noreferrer">
               View All Projects
